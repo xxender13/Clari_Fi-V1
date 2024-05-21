@@ -55,7 +55,7 @@ def process_input(input):
 # Create Gradio interface
 interface = gr.Interface(
     fn=process_input,
-    inputs=gr.inputs.Image(label="Upload an image", type="file"),
+    inputs=gr.inputs.Image(label="Upload an image"),
     outputs=[
         gr.outputs.Image(label="Visual Clarity Check Output (Image)"),
         gr.outputs.File(label="Download Blurred Image (Level A)"),
@@ -64,7 +64,6 @@ interface = gr.Interface(
     ],
     title="Visual Clarity Check"
 )
-
 # Create Streamlit app
 def app():
     st.title("Visual Clarity Check")
