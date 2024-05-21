@@ -2,9 +2,6 @@ import cv2
 import matplotlib.pyplot as plt
 import gradio as gr
 import numpy as np
-import streamlit as st
-import tempfile
-import os
 
 def apply_gaussian_blur(image, radius):
     # Apply Gaussian blur with the specified radius
@@ -39,38 +36,66 @@ def process_image(image):
     axs[3].axis('off')
 
     # Save plot to a file
-    tmpdir = tempfile.mkdtemp()
-    tmpfile = os.path.join(tmpdir, 'visual_clarity_output.png')
-    fig.savefig(tmpfile)
+    fig.savefig('visual_clarity_output.png')
     plt.close(fig)
 
-    return tmpfile, blurred_a, blurred_aa, blurred_aaa
+    return 'visual_clarity_output.png'
+
+def process_video(input_video_path):
+    # Open the video file
+    cap = cv2.VideoCapture(input_video_path)
+
+    # Get the video properties
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+    # Define the codec and create VideoWriter objects for each level of blurring
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    out_a = cv2.VideoWriter('output_a.avi', fourcc, fps, (width, height))
+    out_aa = cv2.VideoWriter('output_aa.avi', fourcc, fps, (width, height))
+    out_aaa = cv2.VideoWriter('output_aaa.avi', fourcc, fps, (width, height))
+
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        # Apply Gaussian blur for A, AA, and AAA standards
+        blurred_a = apply_gaussian_blur(frame, 10)
+        blurred_aa = apply_gaussian_blur(frame, 20)
+        blurred_aaa = apply_gaussian_blur(frame, 35)
+
+        # Write the frames to the output video files
+        out_a.write(blurred_a)
+        out_aa.write(blurred_aa)
+        out_aaa.write(blurred_aaa)
+
+    # Release everything if job is finished
+    cap.release()
+    out_a.release()
+    out_aa.release()
+    out_aaa.release()
+
+    return 'visual_clarity_output.png', 'output_a.avi', 'output_aa.avi', 'output_aaa.avi'
 
 def process_input(input):
     if isinstance(input, np.ndarray):
         return process_image(input)
     else:
-        return "Please upload an image"
+        return process_video(input.name)
 
 # Create Gradio interface
 interface = gr.Interface(
     fn=process_input,
-    inputs=gr.inputs.Image(label="Upload an image"),
+    inputs=gr.File(label="Upload an image or video", file_types=["image", "video"]),
     outputs=[
-        gr.outputs.Image(label="Visual Clarity Check Output (Image)"),
-        gr.outputs.File(label="Download Blurred Image (Level A)"),
-        gr.outputs.File(label="Download Blurred Image (Level AA)"),
-        gr.outputs.File(label="Download Blurred Image (Level AAA)")
-    ],
-    title="Visual Clarity Check"
+        gr.Image(type="filepath", label="Visual Clarity Check Output (Image)"),
+        gr.Video(type="filepath", label="Blurred Video (Level A)"),
+        gr.Video(type="filepath", label="Blurred Video (Level AA)"),
+        gr.Video(type="filepath", label="Blurred Video (Level AAA)")
+    ]
 )
-# Create Streamlit app
-def app():
-    st.title("Visual Clarity Check")
-    st.markdown("Upload an image to check its visual clarity.")
 
-    with st.spinner('Loading...'):
-        gr.Interface(fn=process_input, inputs=gr.inputs.Image(label="Upload an image"), outputs="text").launch(share=True)
-
-if __name__ == "__main__":
-    app()
+# Launch the interface
+interface.launch()
