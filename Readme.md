@@ -1,29 +1,103 @@
-# Description:
-This code is a web application that allows users to upload an image or video file and perform visual clarity checks on it. The application applies different levels of Gaussian blurring (Level A, Level AA, and Level AAA) to simulate the challenges of viewing visual elements on a mobile device.
-The application has two main functionalities:
+# Product Image Evaluation
 
-### Image Processing:
+This project aims to evaluate the visual clarity, color contrast, and text formatting of product images. The evaluation process classifies images into three levels (A, AA, AAA) based on predefined metrics and provides insights into the quality of text formatting, specifically checking for uppercase text.
 
-The user uploads an image file.
-The application converts the image to RGB format and applies Gaussian blurring at three different levels (10px, 20px, and 35px radius).
-The original image and the blurred versions are displayed side by side, showing the effect of blurring on visual clarity.
-The processed image is saved as a PNG file.
+## Features
 
+- **Clarity Visualization**: Applies Gaussian blur to the image to determine clarity levels.
+- **Contrast Evaluation**: Calculates color contrast and classifies it into levels.
+- **Text Classification**: Checks for the presence of uppercase text in the image.
 
-### Video Processing:
+## Rubric for Evaluation Metrics
 
-The user uploads a video file.
-The application reads the video frames, applies Gaussian blurring at three different levels (10px, 20px, and 35px radius) to each frame.
-Three separate video files are generated, one for each level of blurring (Level A, Level AA, and Level AAA).
-The user can download these blurred video files.
+| Metric          | Description                         |
+|-----------------|-------------------------------------|
+| Clarity Level A | Gaussian Blur with 10px radius      |
+| Clarity Level AA| Gaussian Blur with 20px radius      |
+| Clarity Level AAA| Gaussian Blur with 35px radius     |
+| Contrast Level AAA | Contrast > 70 (Good)             |
+| Contrast Level AA  | Contrast 51-70 (Good)            |
+| Contrast Level A   | Contrast 31-50 (Not Good)        |
 
+## Getting Started
 
+### Prerequisites
 
-### The application is built using several libraries:
+- Python 3.6 or higher
+- Pip package manager
 
-OpenCV: For image and video processing operations, including Gaussian blurring.
-Matplotlib: For plotting and visualizing the original and blurred images.
-Gradio: For creating the user interface and handling file inputs and outputs.
-Streamlit: For hosting the Gradio interface in a web application.
+### Installation
 
-The application is designed to help developers and designers assess the visual clarity and perceptibility of graphical elements in mobile applications and websites by simulating real-world mobile viewing conditions.
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/your-username/product-image-evaluation.git
+    cd product-image-evaluation
+    ```
+
+2. **Install the required packages**:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+### Running the Application
+
+1. **Start the Streamlit app**:
+    ```sh
+    streamlit run app.py
+    ```
+
+2. **Upload an image**:
+    - Click on the "Choose an image" button to upload a product image in jpg, jpeg, or png format.
+
+3. **View the evaluation**:
+    - The app will display the clarity visualization, contrast evaluation, and text classification results.
+
+## Evaluation Process
+
+### Clarity Visualization
+
+The clarity of the image is visualized by applying Gaussian blur with different pixel radii:
+
+- **Level A**: 10px radius
+- **Level AA**: 20px radius
+- **Level AAA**: 35px radius
+
+The level with the smallest mean difference from the original image is selected as the clarity level.
+
+### Contrast Evaluation
+
+The color contrast of the image is calculated and classified into levels based on the standard deviation of the L channel in the LAB color space:
+
+- **Level AAA**: Contrast > 70 (Good)
+- **Level AA**: Contrast 51-70 (Good)
+- **Level A**: Contrast 31-50 (Not Good)
+- **Below A**: Contrast <= 30 (Not Good)
+
+### Text Classification
+
+The text extracted from the image using OCR is analyzed to check for uppercase text:
+
+- If any word in the text is uppercase, an issue is flagged.
+- If no text is found, an issue is flagged.
+
+## Example Output
+
+The application provides a visual and textual summary of the evaluation:
+
+- **Clarity Visualization**: Displays the original and blurred images.
+- **Clarity Level**: Indicates the clarity level based on the Gaussian blur analysis.
+- **Contrast Evaluation**: Displays the contrast level and quality.
+- **Text Classification**: Lists any issues found with the text formatting.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any questions or feedback, please contact [your-email@example.com].
+
