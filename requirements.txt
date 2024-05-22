@@ -1,7 +1,6 @@
-streamlit==1.34.0
-opencv-python==4.9.0.80
-
-easyocr==1.3.2
+streamlit
+opencv-python
+easyocr
 matplotlib
 numpy
 pandas
