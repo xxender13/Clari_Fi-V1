@@ -30,7 +30,7 @@ This project aims to evaluate the visual clarity, color contrast, and text forma
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/your-username/product-image-evaluation.git
+    git https://github.com/xxender13/Clari_Fi-V1.git
     cd product-image-evaluation
     ```
 
@@ -93,11 +93,8 @@ The application provides a visual and textual summary of the evaluation:
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License.
 
 ## Contact
 
-For any questions or feedback, please contact [your-email@example.com].
+For any questions or feedback, please contact harshilsharma808@gmail.com.
 
