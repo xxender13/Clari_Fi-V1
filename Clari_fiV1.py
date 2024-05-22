@@ -82,7 +82,7 @@ def text_classification(image):
     if any(word.isupper() for word in text.split()):
         issues.append("Text is in uppercase.")
     else:
-        issues.append("No uppercase text found.")
+        issues.append("Texts Looks to be a mixture of Upper and Lower Caps.")
 
 
     return issues
