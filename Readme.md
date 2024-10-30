@@ -1,40 +1,47 @@
-# Product Image Evaluation
+# Clari-Fi: Product Image Analysis Tool
 
-This project aims to evaluate the visual clarity, color contrast, and text formatting of product images. The evaluation process classifies images into three levels (A, AA, AAA) based on predefined metrics and provides insights into the quality of text formatting, specifically checking for uppercase text.
+This project is designed to analyze product images by evaluating clarity, color contrast, and text formatting using Azure's OCR capabilities and custom contrast calculations. The app provides an in-depth analysis of text clarity, contrast ratios, and text case classification.
 
 ## Features
 
-- **Clarity Visualization**: Applies Gaussian blur to the image to determine clarity levels.
-- **Contrast Evaluation**: Calculates color contrast and classifies it into levels.
-- **Text Classification**: Checks for the presence of uppercase text in the image.
+- **Clarity Level Detection**: Assesses the clarity of the uploaded image and classifies it as Clarity Level A, AA, or AAA.
+- **Contrast Calculation**: Calculates the Advanced Perceptual Contrast Algorithm (APCA) contrast ratio between the text and background colors.
+- **Text Case Classification**: Uses OCR to detect and classify text as Uppercase, Lowercase, or Mixture.
 
-## Rubric for Evaluation Metrics
+## Evaluation Rubric
 
-| Metric          | Description                         |
-|-----------------|-------------------------------------|
-| Clarity Level A | Gaussian Blur with 10px radius      |
-| Clarity Level AA| Gaussian Blur with 20px radius      |
-| Clarity Level AAA| Gaussian Blur with 35px radius     |
-| Contrast Level AAA | Contrast > 70 (Good)             |
-| Contrast Level AA  | Contrast 51-70 (Good)            |
-| Contrast Level A   | Contrast 31-50 (Not Good)        |
+| Criterion                | Description                                        |
+|--------------------------|----------------------------------------------------|
+| **Clarity Level A**      | Gaussian Blur with 35px radius                     |
+| **Clarity Level AA**     | Gaussian Blur with 20px radius                     |
+| **Clarity Level AAA**    | Gaussian Blur with 10px radius                     |
+| **Text Classification**  | Uppercase, Lowercase, or Mixed                     |
+| **APCA Contrast Level**  | Custom APCA contrast calculation between text and background |
 
 ## Getting Started
 
 ### Prerequisites
 
 - Python 3.6 or higher
-- Pip package manager
+- Azure Cognitive Services with Computer Vision API enabled
+- Environment variables for `AZURE_SUBSCRIPTION_KEY` and `AZURE_ENDPOINT`
 
 ### Installation
 
 1. **Clone the repository**:
     ```sh
-    git https://github.com/xxender13/Clari_Fi-V1.git
-    cd product-image-evaluation
+    git clone https://github.com/xxender13/Clari_Fi-V1.git
+    cd Clari_Fi-V1
     ```
 
-2. **Install the required packages**:
+2. **Set up environment variables**:
+    - Create a `.env` file with your Azure credentials:
+      ```plaintext
+      AZURE_SUBSCRIPTION_KEY="your_subscription_key"
+      AZURE_ENDPOINT="your_endpoint_url"
+      ```
+
+3. **Install the required packages**:
     ```sh
     pip install -r requirements.txt
     ```
@@ -43,58 +50,50 @@ This project aims to evaluate the visual clarity, color contrast, and text forma
 
 1. **Start the Streamlit app**:
     ```sh
-    streamlit run app.py
+    streamlit run Clari_fi_final.py
     ```
 
 2. **Upload an image**:
-    - Click on the "Choose an image" button to upload a product image in jpg, jpeg, or png format.
+    - Use the "Choose an image" button to upload a product image in JPG, JPEG, or PNG format.
 
-3. **View the evaluation**:
-    - The app will display the clarity visualization, contrast evaluation, and text classification results.
+3. **View the analysis**:
+    - The app will display clarity level, contrast evaluation, and text classification details.
 
 ## Evaluation Process
 
-### Clarity Visualization
+### Clarity Level Detection
 
-The clarity of the image is visualized by applying Gaussian blur with different pixel radii:
-
-- **Level A**: 10px radius
-- **Level AA**: 20px radius
-- **Level AAA**: 35px radius
-
-The level with the smallest mean difference from the original image is selected as the clarity level.
+The app assesses image clarity by analyzing variance in pixel sharpness:
+- **Clarity Level A**: 35px Gaussian blur radius
+- **Clarity Level AA**: 20px Gaussian blur radius
+- **Clarity Level AAA**: 10px Gaussian blur radius
 
 ### Contrast Evaluation
 
-The color contrast of the image is calculated and classified into levels based on the standard deviation of the L channel in the LAB color space:
+APCA contrast ratios between text and background colors are calculated, providing insights into readability:
+- **High Contrast**: Values are optimized for readability.
+- **Low Contrast**: Suggests potential readability issues.
 
-- **Level AAA**: Contrast > 70 (Good)
-- **Level AA**: Contrast 51-70 (Good)
-- **Level A**: Contrast 31-50 (Not Good)
-- **Below A**: Contrast <= 30 (Not Good)
+### Text Case Classification
 
-### Text Classification
+Using OCR, the app classifies text as:
+- **Uppercase**
+- **Lowercase**
+- **Mixed**
 
-The text extracted from the image using OCR is analyzed to check for uppercase text:
-
-- If any word in the text is uppercase, an issue is flagged.
-- If no text is found, an issue is flagged.
+The app also calculates the percentage of each case type in the detected text.
 
 ## Example Output
 
-The application provides a visual and textual summary of the evaluation:
-
-- **Clarity Visualization**: Displays the original and blurred images.
-- **Clarity Level**: Indicates the clarity level based on the Gaussian blur analysis.
-- **Contrast Evaluation**: Displays the contrast level and quality.
-- **Text Classification**: Lists any issues found with the text formatting.
+The application provides the following insights:
+- **Clarity Level**: Displays the clarity level of the uploaded image.
+- **Contrast Ratios**: Presents the APCA contrast ratios between text and background.
+- **Text Classification**: Summarizes text case classification results.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
+Contributions are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
 
 ## Contact
 
-For any questions or feedback, please contact harshilsharma808@gmail.com.
-
+For questions or feedback, please contact **harshilsharma808@gmail.com**.

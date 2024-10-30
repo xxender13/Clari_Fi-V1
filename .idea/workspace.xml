@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="07a8264b-f05e-4e2e-b8cd-bf2f8c28edad" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clari_fiV1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clari_fiV1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,7 @@
       <workItem from="1726588278218" duration="3431000" />
       <workItem from="1726612395085" duration="3204000" />
       <workItem from="1729032595003" duration="78000" />
-      <workItem from="1730304182044" duration="909000" />
+      <workItem from="1730304182044" duration="1252000" />
     </task>
     <servers />
   </component>
