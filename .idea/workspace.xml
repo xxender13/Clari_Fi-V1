@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a8264b-f05e-4e2e-b8cd-bf2f8c28edad" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Clari_fiV1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clari_fiV1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
@@ -12,6 +13,14 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,23 +32,33 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2glaY7xxPqHVmztiiNCxUEMUUhJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\harsh\OneDrive\Desktop\Clari_Fi-V1" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Clari_fiV1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Clari_Fi-V1" />
@@ -84,7 +103,24 @@
       <option name="presentableId" value="Default" />
       <updated>1716274665486</updated>
       <workItem from="1716274672196" duration="436000" />
-      <workItem from="1716365033350" duration="11163000" />
+      <workItem from="1716365033350" duration="12204000" />
+      <workItem from="1719330947958" duration="1619000" />
+      <workItem from="1719477577127" duration="1304000" />
+      <workItem from="1720540973585" duration="4225000" />
+      <workItem from="1720683878091" duration="12906000" />
+      <workItem from="1720778205394" duration="1421000" />
+      <workItem from="1721018695489" duration="9102000" />
+      <workItem from="1721630852337" duration="1045000" />
+      <workItem from="1722533806964" duration="772000" />
+      <workItem from="1722591941296" duration="8136000" />
+      <workItem from="1724781895129" duration="167000" />
+      <workItem from="1724796405762" duration="17000" />
+      <workItem from="1724863288039" duration="128000" />
+      <workItem from="1725465522103" duration="1324000" />
+      <workItem from="1726588278218" duration="3431000" />
+      <workItem from="1726612395085" duration="3204000" />
+      <workItem from="1729032595003" duration="78000" />
+      <workItem from="1730304182044" duration="909000" />
     </task>
     <servers />
   </component>
@@ -92,6 +128,10 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Clari_fiV1_py$V2.coverage" NAME="V2 Coverage Results" MODIFIED="1719331946141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Clari_fiV1_py$V7.coverage" NAME="V7 Coverage Results" MODIFIED="1720769801618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Clari_Fi_V1$Clari_fiV1.coverage" NAME="Clari_fiV1 Coverage Results" MODIFIED="1716369831193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/V10_py$V9.coverage" NAME="V9 Coverage Results" MODIFIED="1730304203589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Clari_fiV1_py$Clari_fiV1.coverage" NAME="Clari_fiV1 Coverage Results" MODIFIED="1720769412786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
+
 def apply_gaussian_blur(image, radius):
     return cv2.GaussianBlur(image, (radius * 2 + 1, radius * 2 + 1), 0)
 

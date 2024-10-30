@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Image Analysis Results</title>
+<h1>Image Analysis Results</h1>
+<img src="{{ image_url }}" alt="Annotated Image">
+<h2>Analysis Details</h2>
+<ul>
+    <li>Text Classification: {{ results.text_classification }}</li>
+    <li>Average Color of Product: {{ results.average_color_product }}</li>
+    <li>Average Color of Text: {{ results.average_color_text }}</li>
+    <li>Average Color of Background: {{ results.average_color_background }}</li>
+    <li>Contrast Ratio (Product vs. Background): {{ results.contrast_ratio_product }} ({{ results.category_product }})</li>
+    <li>Contrast Ratio (Text vs. Background): {{ results.contrast_ratio_text }} ({{ results.category_text }})</li>
+</ul>
